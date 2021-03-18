@@ -55,7 +55,7 @@
 	<!-- Creates the docker images-->
     
     <target name="docker-image" depends="docker-staging">
-        <exec dir="${docker-staging.dir}" executable="docker" failonerror="true">
+        <exec dir="staging/docker" executable="docker" failonerror="true">
             <arg value="build"/>
             <arg value="-t" />
 	    <arg value="${dockerhub-name}/${project-name}:${version}" />

@@ -37,7 +37,7 @@ pipeline {
       } 
       stage('build') {
          steps {
-            sh "docker build -t app-info:1.0 -f Dockerfile ."
+             sh "ant docker-image" 
          }
       } 
     /*Docker-Compose used to run the containers -- Mysql:5.6 and app-info:1.0
