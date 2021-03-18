@@ -33,7 +33,7 @@ pipeline {
       // Copy Artifacts, Staging, Build Image and Push to DockerHub
       stage('build') {
          steps {
-            sh "ant push-docker-image"
+            sh "ant docker-image"
          }
       } 
     //Docker-Compose used to run the containers -- Mysql:5.6 and app-info:1.0
