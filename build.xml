@@ -55,11 +55,13 @@
 	<!-- Creates the docker images-->
     
     <target name="docker-image" depends="docker-staging">
-        <exec dir="staging/docker" file="Dockerfile" executable="docker" failonerror="true">
+        <exec dir=${"docker-staging.dir"}  executable="docker" failonerror="true">
             <arg value="build"/>
-            <arg value="-t" />
-	    <arg value="${dockerhub-name}/${project-name}:${version}" />
-	    <arg value="."/>
+            <arg value="-t"/>
+	        <arg value="${dockerhub-name}/${project-name}:${version}" />
+            <arg value="-f"/>
+            <arg value="Dockerfile"/>
+	        <arg value="."/>
         </exec>
     </target>
 	
